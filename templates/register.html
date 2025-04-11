@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Registration</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('static/img2.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50vh;
+    }
+/* 
+    .form-box {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      width: 350px;
+    } */
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"], select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    a {
+      color: #007BFF;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="logo">MyApp</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="{{ url_for('login') }}">Login</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="form-box">
+      <h2>User Registration</h2>
+      <form method="POST">
+        Username:
+        <input type="text" name="username" required><br>
+
+        Email:
+        <input type="email" name="email" required><br>
+
+        Gender:
+        <select name="gender" required>
+          <option value="">Select</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select><br>
+
+        Mobile Number:
+        <input type="text" name="mobile" required><br>
+
+        Password:
+        <input type="password" name="password" required><br>
+
+        Confirm Password:
+        <input type="password" name="confirm_password" required><br>
+
+        <input type="submit" value="Register">
+      </form>
+      <p>Already registered? <a href="{{ url_for('login') }}">Login here</a>.</p>
+    </div>
+  </div>
+
+</body>
+</html>
